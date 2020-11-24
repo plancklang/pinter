@@ -1,4 +1,4 @@
-# This file is NOT AUTOOMATICALLY GENERATED.
+# This file is NOT AUTOMATICALLY GENERATED.
 # It may be at some point in the future, but not right now.
 
 BIN = bin/
