@@ -1,4 +1,4 @@
-Pinter
+Pinter ![Build Status](https://github.com/jakeroggenbuck/snow_script/workflows/check-build)
 ======
 
 This repository houses the codebase for pinter (**P**lanck **inter**preter), an
