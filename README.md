@@ -1,4 +1,4 @@
-Pinter ![Build Status](https://github.com/plancklang/pinter/workflows/check-build)
+Pinter ![C/C++ CI](https://github.com/plancklang/pinter/workflows/C/C++%20CI/badge.svg)
 ======
 
 This repository houses the codebase for pinter (**P**lanck **inter**preter), an
