@@ -3,15 +3,18 @@
 
 BIN = bin/
 
-OBJECTS = bin/main.o \
+OBJECTS = bin/decode.o \
+          bin/main.o \
           bin/parse_args.o
 
 CC = clang -c -I.
 LINKER = clang
 
 bin/pinter : $(OBJECTS)
-	@mkdir -p bin/
 	@$(LINKER) $(OBJECTS) -o bin/pinter
+
+bin/decode.o : src/decode.c src/decode.h src/bytecode/bytecodes.h
+	$(CC) src/decode.c -o bin/decode.o
 
 bin/main.o : src/main.c src/parse_args.h src/util.h
 	$(CC) src/main.c -o bin/main.o
