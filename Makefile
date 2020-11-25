@@ -10,6 +10,7 @@ CC = clang -c -I.
 LINKER = clang
 
 bin/pinter : $(OBJECTS)
+	@mkdir -p bin/
 	@$(LINKER) $(OBJECTS) -o bin/pinter
 
 bin/main.o : src/main.c src/parse_args.h src/util.h
