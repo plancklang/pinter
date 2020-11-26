@@ -11,7 +11,7 @@ void usage() {
 	printf("\
 Usage:\n\
 	--help see this message\n\
-	-v see the version
+	-v see the version\n\
 	[file]: execute [file]\n\
 ");
 }
