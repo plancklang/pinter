@@ -15,6 +15,10 @@ Usage:\n\
 ");
 }
 
+void info() {
+	printf("Pinter %s\n", VERSION);
+}
+
 
 int main(int argc, char** argv) {
 
@@ -23,6 +27,8 @@ int main(int argc, char** argv) {
 
 	if (args.help) {
 		usage();
+	} else if (args.info) {
+		info();	
 	} else {
 		PINTER_ERROR("bytecode interpretation currently unsupported.\n");
 	}

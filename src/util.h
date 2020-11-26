@@ -12,6 +12,8 @@
 #define PL_SUCCESS 0
 #define PL_ERROR 1
 
+#define VERSION "0.1"
+
 #define PINTER_ERROR(...) do {                      \
 	fprintf(stderr, "Error: pinter: " __VA_ARGS__); \
 	exit(PL_ERROR);                                 \
