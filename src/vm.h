@@ -26,8 +26,8 @@ typedef struct {
 } pi_vm_t;
 
 /**
- * Initializes the given vm pointer with [size] cells, and sets *err if
- * something goes wrong.
+ * Initializes the given vm pointer with [size] cells, and sets *err to 
+ * a nonzero value if something goes wrong.
  */
 void init_vm(pi_vm_t* vm, int size, int* err);
 
