@@ -13,9 +13,15 @@ pinter_args_t pi_parse(int argc, char** argv) {
 
 	if (STREQ(argv[0], "--help", 6)) {
 		ret.help = true;
+		ret.info = false;
+		ret.file = NULL;
+	} else if (STREQ(argv[0], "-v", 2)) {
+		ret.help = false;
+		ret.info = true;
 		ret.file = NULL;
 	} else {
 		ret.help = false;
+		ret.info = false;
 		ret.file = argv[0];
 	}
 

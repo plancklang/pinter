@@ -17,6 +17,7 @@ typedef struct {
 
 	bool help; /* whether --help was passed as an option */
 	char* file; /* which file to read in */
+	bool info; /* should pinter show info */
 
 } pinter_args_t;
 
