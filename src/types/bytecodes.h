@@ -5,8 +5,8 @@
  * Author: Adam Hutchings
  */
 
-#ifndef PINTER_BYTECODE_BYTECODES_H
-#define PINTER_BYTECODE_BYTECODES_H
+#ifndef PINTER_TYPES_BYTECODES_H
+#define PINTER_TYPES_BYTECODES_H
 
 #include <stdint.h> /* int32_t */
 
@@ -27,4 +27,4 @@ typedef struct {
 
 } bytecode_t;
 
-#endif /* PINTER_BYTECODE_BYTECODES_H */
+#endif /* PINTER_TYPES_BYTECODES_H */
