@@ -6,6 +6,7 @@ BIN = bin/
 OBJECTS = bin/decode.o \
           bin/main.o \
           bin/parse_args.o \
+          bin/types/stack.o \
           bin/vm.o
 
 CC = clang -c -I.
@@ -22,6 +23,9 @@ bin/main.o : src/main.c src/parse_args.h src/util.h
 
 bin/parse_args.o : src/parse_args.c src/parse_args.h src/util.h
 	$(CC) src/parse_args.c -o bin/parse_args.o
+
+bin/types/stack.o : src/types/stack.c src/types/stack.h
+	$(CC) src/types/stack.c -o bin/types/stack.o
 
 bin/vm.o : src/vm.c src/vm.h
 	$(CC) src/vm.c -o bin/vm.o
