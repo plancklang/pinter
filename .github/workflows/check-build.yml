@@ -15,5 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: mkdir bin
       run: mkdir bin
+    - name: mkdir bin/types
+      run: mkdir bin/types
     - name: make
       run: make
