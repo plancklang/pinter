@@ -24,11 +24,13 @@
 /**
  * A given member of the call stack. Contains the instruction to jump back to
  * once the function returns, and the location for the stack to rewind to.
+ * Also the return value to go back to.
  */
 typedef struct {
 
 	int instruction_ret;
 	int stack_loc;
+	int ret_loc;
 
 } call_t;
 
@@ -68,13 +70,13 @@ int vm_stalloc(pi_vm_t* vm, int amount, int* err);
  * then jumps to the location given by jump. Arguments need to be pushed onto the
  * stack before this. ret_val is where the return value should go.
  */
-void vm_call(pi_vm_t* vm, int jump, int ret_val);
+int vm_call(pi_vm_t* vm, int jump, int ret_val);
 
 /**
  * Pops a stack frame and returns a value. The value to be returned is in cell
  * ret_src, and should return to cell ret_dest , with size bytes being copied
  * over.
  */
-void vm_ret(pi_vm_t* vm, int ret_dest, int ret_src, int size)
+int vm_ret(pi_vm_t* vm, int ret_dest, int size);
 
 #endif /* PINTER_VM_H */

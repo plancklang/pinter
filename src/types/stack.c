@@ -17,13 +17,13 @@ int pi_stack_push(pi_stack_t** in, void* val) {
 	new_stack->prev = *in;
 
 	/* Check length */
-	if (*in->len >= STACK_MAX_SIZE) {
+	if ((*in)->len >= STACK_MAX_SIZE) {
 		return -1;
 	}
 
-	new_stack->len = *in->len + 1;
+	new_stack->len = (*in)->len + 1;
 
-	*in = new_stack;
+	(*in) = new_stack;
 
 	return 0;
 
@@ -31,17 +31,17 @@ int pi_stack_push(pi_stack_t** in, void* val) {
 
 void* pi_stack_pop(pi_stack_t** in, int* err) {
 
-	if (*in->len == 0) {
+	if ((*in)->len == 0) {
 		*err = -1;
 		return NULL;
 	}
 
-	void* ret = *in->content;
+	void* ret = (*in)->content;
 
 	/* Copy for freeing up */
 	pi_stack_t* to_free = *in;
 
-	*in = *in->prev;
+	*in = (*in)->prev;
 
 	free(to_free);
 
