@@ -8,7 +8,7 @@
 #include <stdio.h> /* FILE */
 #include <stdlib.h> /* malloc */
 
-#include <src/bytecode/bytecodes.h> /* bytecode_t, etc. */
+#include <src/types/bytecodes.h> /* bytecode_t, etc. */
 
 #define ERR_NULL_FILE -1 /* If a file doesn't exist */
 #define ERR_PARTIAL_INSTRUCTION -2 /* If the byte count is not a * of 9 */
