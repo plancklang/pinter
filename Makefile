@@ -15,7 +15,7 @@ LINKER = clang
 bin/pinter : $(OBJECTS)
 	@$(LINKER) $(OBJECTS) -o bin/pinter
 
-bin/decode.o : src/decode.c src/decode.h src/bytecode/bytecodes.h
+bin/decode.o : src/decode.c src/decode.h src/types/bytecodes.h
 	$(CC) src/decode.c -o bin/decode.o
 
 bin/main.o : src/main.c src/parse_args.h src/util.h
