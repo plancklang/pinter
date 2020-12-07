@@ -22,9 +22,10 @@ exits when there are no more bytecodes left in the array.
 The VM
 ------
 The Pinter VM is a large memory space allocated on the heap. The bytecodes
-referencing memory operations will have their effects shown in this memory
-space. Memory cells start being filled up from the very beginning of the block,
-in order.
+[referencing memory operations]
+(https://github.com/plancklang/pinter/blob/main/doc/bytecodes.md) will have
+their effects shown in this memory space. Memory cells start being filled up
+from the very beginning of the block, in order.
 
 Function calls / returns
 ------------------------
