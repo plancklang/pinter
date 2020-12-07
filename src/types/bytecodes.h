@@ -12,7 +12,25 @@
 
 typedef enum {
 
-	NXLL, /* Only NXLL for now, nothing else needed */
+	NXLL,
+	SETC,
+	SETV,
+	CADD,
+	CSUB,
+	CMUL,
+	CDIV,
+	IADD,
+	ISUB,
+	IMUL,
+	IDIV,
+	DADD,
+	DSUB,
+	DMUL,
+	DDIV,
+	CALL,
+	RTRN,
+	EXIT,
+	DREF,
 	BYTECODE_MAX, /* Put this at the end of the list always */
 
 } opcode_t;
