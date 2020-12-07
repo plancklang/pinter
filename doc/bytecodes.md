@@ -48,7 +48,7 @@ Bytecodes 0x0b - 0x0e : DADD, DSUB, DMUL, DDIV <br/>
 	given cells as eight-byte `signed double` numbers.
 
 CALL (0x10) <br/>
-	- Calls the function starting at bytecode $0, and puts the return value into
+	- Calls the function starting at bytecode $1, and puts the return value into
 	cell $0 (and cells following if the return value is larger than one cell)
 
 RTRN (0x11) <br/>
