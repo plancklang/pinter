@@ -119,18 +119,26 @@ def write_human_readable_file(path: str, lines):
             file.write(line)
 
 
-def write_bytecode_file(path: str, lines):
-    """Write lines as bytes"""
-    with open(path, "wb") as file:
+def write_bytecode_string_file(path: str, lines):
+    """Write lines as byte string (basically write_human_readable_file)"""
+    with open(path, "w") as file:
         for line in lines:
             file.write(bytes(line, "UTF-8"))
+
+
+def write_bytecode_bytearray_file(path: str, _bytearray):
+    with open(path, "wb") as file:
+        file.write(_bytearray)
 
 
 def convert_human_readable_to_bytecode_file(input_path: str, output_path: str):
     """Open human readable file, convert to bytecode,
     then write as bytecode file"""
     parsed_file = parse_human_readable_bytecode_file(input_path)
-    write_bytecode_file(output_path, parsed_file)
+    _bytes = bytearray()
+    for parsed in parsed_file:
+        _bytes.extend(bytecode_string_to_bytearray(parsed))
+    write_bytecode_bytearray_file(output_path, _bytes)
 
 
 def convert_bytecode_to_human_readable_file(input_path: str, output_path: str):
