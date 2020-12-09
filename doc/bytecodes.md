@@ -3,11 +3,11 @@ Bytecodes
 
 Overview
 --------
-This file aims to describe the functionality of all bytecode recognized by the
+This file aims to describe the functionality of all bytecodes recognized by the
 Pinter interpreter, or the behavior executed by the interpreter when executing
 a bytecode with a particular opcode. The bytecodes are referred to by a
 four-character string as a mnemonic for their functionality, as well as the hex
-code representing each one. This document will thenn give a description of what
+code representing each one. This document will then give a description of what
 happens upon execution, referring to the left operand as $1 and the right one as
 $1.
 
@@ -41,14 +41,14 @@ CDIV (0x06) <br/>
 
 Bytecodes 0x07 - 0x0a : IADD, ISUB, IMUL, IDIV <br/>
 	- The same as CADD, CSUB, CMUL, CDIV, but the interpreter considers the
-	given cells as four-byte `signed innt` numbers.
+	given cells as four-byte `signed int` numbers.
 
 Bytecodes 0x0b - 0x0e : DADD, DSUB, DMUL, DDIV <br/>
 	- The same as CADD, CSUB, CMUL, CDIV, but the interpreter considers the
 	given cells as eight-byte `signed double` numbers.
 
 CALL (0x10) <br/>
-	- Calls the function starting at bytecode $0, and puts the return value into
+	- Calls the function starting at bytecode $1, and puts the return value into
 	cell $0 (and cells following if the return value is larger than one cell)
 
 RTRN (0x11) <br/>
