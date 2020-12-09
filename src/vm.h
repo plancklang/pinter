@@ -14,7 +14,7 @@
 #include <src/types/stack.h> /* pi_stack_t */
 
 #define VM_SIZE_MIN 1 << 16 /* ~ 65 KB */
-#define VM_SIZE_MAX 1 << 31 /* ~ 2  GB */
+#define VM_SIZE_MAX 1 << 30 /* ~ 2  GB */
 
 #define VM_ERR_INVALID_SIZE -1 /* If the size is outside the bounds above */
 #define VM_ERR_INVALID_ALLOC -2 /* If malloc fails for whatever reason */
