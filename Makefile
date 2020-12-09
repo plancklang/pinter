@@ -3,7 +3,8 @@
 
 BIN = bin/
 
-OBJECTS = bin/decode.o \
+OBJECTS = bin/behavior.o \
+          bin/decode.o \
           bin/main.o \
           bin/parse_args.o \
           bin/types/stack.o \
@@ -14,6 +15,9 @@ LINKER = clang
 
 bin/pinter : $(OBJECTS)
 	@$(LINKER) $(OBJECTS) -o bin/pinter
+
+bin/behavior.o : src/behavior.c src/behavior.h src/types/bytecodes.h src/vm.h
+	$(CC) src/behavior.c -o bin/behavior.o
 
 bin/decode.o : src/decode.c src/decode.h src/types/bytecodes.h
 	$(CC) src/decode.c -o bin/decode.o
