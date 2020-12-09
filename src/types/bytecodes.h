@@ -13,8 +13,8 @@
 typedef enum {
 
 	NXLL,
-	SETC,
 	SETV,
+	SETC,
 	CADD,
 	CSUB,
 	CMUL,
