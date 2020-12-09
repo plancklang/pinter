@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
 		
 		/* Open the file */
 
-		FILE* pi_read = fopen(args.file, "r");
+		FILE* pi_read = fopen(args.file, "rb");
 
 		if (pi_read == NULL) {
 			PINTER_ERROR("could not open file:\n\t%s\n", args.file);
