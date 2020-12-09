@@ -14,11 +14,13 @@ bytecode_t* decode(FILE* fp, int* ct, int* err) {
 	int size = ftell(fp);
 	rewind(fp);
 
+	printf("%d\n", size);
+
 	/* Get contents of file (nice) */
 	char contents[size - 1];
 	for (int i = 0; i < size - 1; contents[i] = getc(fp), i++);
 
-	if ( (size % 9) != 1 ) {
+	if ( (size % 9) ) {
 		*err = ERR_PARTIAL_INSTRUCTION;
 		return ret;
 	}
