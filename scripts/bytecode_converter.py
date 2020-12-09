@@ -113,34 +113,46 @@ def parse_raw_bytecode_file(path: str):
 
 
 def write_human_readable_file(path: str, lines):
+    """Write lines to file"""
     with open(path, "w") as file:
         for line in lines:
             file.write(line)
 
 
 def write_bytecode_file(path: str, lines):
+    """Write lines as bytes"""
     with open(path, "wb") as file:
         for line in lines:
             file.write(bytes(line, "UTF-8"))
 
 
 def convert_human_readable_to_bytecode_file(input_path: str, output_path: str):
+    """Open human readable file, convert to bytecode,
+    then write as bytecode file"""
     parsed_file = parse_human_readable_bytecode_file(input_path)
     write_bytecode_file(output_path, parsed_file)
 
 
 def convert_bytecode_to_human_readable_file(input_path: str, output_path: str):
+    """Open bytecode file, convert to human readable,
+    then write as human readable file"""
     parsed_file = parse_raw_bytecode_file(input_path)
     write_human_readable_file(output_path, parsed_file)
 
 
 class BytecodeConverter(object):
+    """In the console, use these methods
+
+    run './bytecode_converter.py command_name input_path output_path'
+
+    """
     def human_readable_to_bytecode(self, input_path, output_path):
         convert_human_readable_to_bytecode_file(input_path, output_path)
 
     def bytecode_to_human_readable(self, input_path, output_path):
         convert_bytecode_to_human_readable_file(input_path, output_path)
 
+    """Aliases to other commands"""
     def b2h(self, input_path, output_path):
         self.bytecode_to_human_readable(input_path, output_path)
 
